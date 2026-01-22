@@ -1,0 +1,13 @@
+html, body, #root {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  visibility: visible !important;
+}
