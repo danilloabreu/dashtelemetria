@@ -30,9 +30,12 @@ services:
     working_dir: /app
     volumes:
       - ./backend:/app
-    command: sh -c "npm install express mongodb cors ts-node typescript @types/express @types/node @types/cors && npx ts-node server.ts"
+    # Adicionado dotenv aqui também para garantir que não dê erro caso você mantenha o require
+    command: sh -c "npm install express mongodb cors ts-node typescript dotenv @types/express @types/node @types/cors @aws-sdk/client-s3 @aws-sdk/s3-request-presigner && npx ts-node server.ts"
     ports:
       - "3000:3000"
+    env_file:
+      - ./backend/.env
     depends_on:
       - mongodb
 
